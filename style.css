@@ -1,0 +1,40 @@
+.container {
+	width: 550px;
+	margin: 0 auto;
+	position: relative;
+}
+
+h1 {
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+
+.background {
+	background-color: ;
+
+}
+.cell {
+	border: 1px solid orange;
+	display: inline-block;
+}
+
+.selected {
+	background-color: 
+}
+
+#square container {
+	width: ;
+	height: ;
+}
+
+.square {
+	border: 2px solid black;
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 105px;
+	text-align: center;
+	padding: 25px;
+
+}
