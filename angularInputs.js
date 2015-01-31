@@ -3,23 +3,24 @@ var app = angular.module('angularInputsApp', ["firebase"]);
 
 app.controller('angularInputsCtrl', function($scope, $firebase){
 
-var boardRef = new Firebase ("https://monique-tictactoe.firebaseio.com/board");
+var boardRef = new Firebase("https://monique-tictactoe.firebaseio.com/board");
 var boardSync = $firebase(boardRef);
 $scope.board = boardSync.$asArray();
 
 $scope.board.$loaded(function(){
-	if($scope.board.length === 0){
+	if($scope.board.length == 0){
 		for(var i = 0; i < 9; i++){
-		$scope.board.$add({eachsquare:""});
+			$scope.board.$add({eachsquare: ""});
 		}
 	}
-	else {
-		for(var a = 0; a < 9; a++){
-			$scope.board[a].eachsquare = "";
-			$scope.board.$save(a);
+	else{
+		for(var i = 0; i < 9; i++){
+			$scope.board[i].eachsquare = "";
+			$scope.board.$save(i);
 		}
 	}
-});
+
+})
 
 	$scope.turnNum = 0;
 
@@ -27,7 +28,7 @@ $scope.board.$loaded(function(){
 		// console.log($scope.turnNum);
 		for(var i = 0; i < 3; i++){
 			//row wins
-			if($scope.board[i][0] == $scope.board[i][1] && $scope.board[i][0] == $scope.board[i][2] && $scope.board[i][0] != ""){
+			if($scope.board[i].eachsquare == $scope.board[i][1] && $scope.board[i][0] == $scope.board[i][2] && $scope.board[i][0] != ""){
 				alert(piece + " wins in the row " + i);
 			}
 			//column wins
@@ -51,16 +52,14 @@ $scope.board.$loaded(function(){
 		}
 	}
 
-	// $scope.turnNum = 0;
+	$scope.turnNum = 0;
 	$scope.makeMove = function(index){
-		if($scope.board[index].eachsquare === ""){
-			console.log("hello");
-			var piece = ($scope.turnNum % 2) === 0 ? "X" : "O";
-			$scope.board[index].eachsquare = piece;
-			console.log(piece);
-			
+		if($scope.board[index].eachsquare == ""){
+			var piece = ($scope.turnNum % 2) == 0 ? "X" : "O";
 			$scope.turnNum++;
-			winConditions(piece);
+			$scope.board[index].eachsquare = piece;
+			// winConditions(piece);
+			$scope.board.$save($scope.board[index]);
 		}
 	};
 

@@ -23,7 +23,7 @@
 		<div class="background">
 
 			<div id="square container">
-					<div class="square" ng-repeat="cell in board track by $index" ng-click="makeMove($index)" ng-bind = "{{ cell.eachsquare == "" ? "&nbsp;" : cell.eachsquare }}">
+					<div class="square" ng-repeat="cell in board track by $index" ng-click="makeMove($index)" ng-bind="cell.eachsquare = '' ? '&nbsp;' : cell.eachsquare">
 					</div>
 			</div>
 		</div>
