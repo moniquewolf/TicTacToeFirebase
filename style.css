@@ -1,5 +1,5 @@
 .container {
-	width: 550px;
+	width: 500px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -7,12 +7,13 @@
 h1 {
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
+	vertical-align: middle;
 }
 
 .background {
 	background-color: ;
-
 }
+
 .cell {
 	border: 1px solid orange;
 	display: inline-block;
@@ -22,19 +23,16 @@ h1 {
 	background-color: 
 }
 
-#square container {
-	width: ;
-	height: ;
-}
-
 .square {
-	border: 2px solid black;
-	width: 125px;
-	height: 125px;
+	border: 1px dashed black;
+	border-radius: ;
+	width: 100px;
+	height: 100px;
 	display: inline-block;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 105px;
 	text-align: center;
 	padding: 25px;
+	vertical-align: middle;
 
 }
